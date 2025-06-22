@@ -1,4 +1,16 @@
 {
   "name": "wakatime-tldraw",
-  "packageManager": "yarn@4.6.0"
+  "version": "0.1.0",
+  "author": "MMK21",
+  "main": "src/index.ts",
+  "description": "Adds time-tracking support to tldraw (for WakaTime-compatible servers)",
+  "packageManager": "yarn@4.6.0",
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  }
 }
