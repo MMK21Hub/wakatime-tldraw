@@ -6,7 +6,6 @@
   "description": "Adds time-tracking support to tldraw (for WakaTime-compatible servers)",
   "packageManager": "yarn@4.6.0",
   "devDependencies": {
-    "@types/node": "^24.0.3",
     "typescript": "^5.8.3"
   },
   "scripts": {
