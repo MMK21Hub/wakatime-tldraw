@@ -6,7 +6,7 @@
 
 1. Run `yarn` to install dependencies (Yarn v4 required)
 2. `yarn watch` to start the TypeScript compiler
-3. Also, `python3 -m http.server -d dist` to make the built file accessible to TamperMonkey during development
+3. Also, `python3 -m http.server -d dist 4848` to make the built file accessible to TamperMonkey during development
 4. Open the TamperMonkey dashboard and create a "loader" script to load the userscript during development:
 
 ```js
@@ -16,8 +16,15 @@
 // @match        https://www.tldraw.com/
 // @icon         https://www.tldraw.com/favicon.svg
 // @grant        none
-// @require      http://127.0.0.1:8000/index.js
 // ==/UserScript==
+fetch("http://localhost:4848/index.js", {
+  headers: {
+    pragma: "no-cache",
+    "cache-control": "no-cache",
+  },
+})
+  .then((r) => r.text())
+  .then((code) => eval(code))
 ```
 
 5. Open up <https://www.tldraw.com/> and hopefully it works
