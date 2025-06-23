@@ -24,4 +24,17 @@ function debug(message: string) {
   console.debug(`[wackatime-tldraw] ${message}`)
 }
 
+function handleCanvasModified() {
+  debug("Canvas modified")
+}
+
+function setUpEventListeners() {
+  window.editor.sideEffects.registerAfterChangeHandler(
+    "shape",
+    handleCanvasModified
+  )
+}
+
+// Setup
+setUpEventListeners()
 debug("Userscript loaded successfully")

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "target": "esnext",
-    "module": "esnext",
+    "module": "none",
     "lib": ["ES2024", "DOM"],
     "outDir": "./dist",
     "skipLibCheck": true
