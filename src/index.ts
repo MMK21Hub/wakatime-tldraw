@@ -9,4 +9,19 @@
 // @grant        none
 // ==/UserScript==
 
-console.log("hello chat")
+import { Editor } from "./tldraw"
+
+declare global {
+  interface Window {
+    editor: Editor
+    app: Editor
+    /** Sets some `useProperZero` property and refreshes the window */
+    zero(): void
+  }
+}
+
+function debug(message: string) {
+  console.debug(`[wackatime-tldraw] ${message}`)
+}
+
+debug("Userscript loaded successfully")
